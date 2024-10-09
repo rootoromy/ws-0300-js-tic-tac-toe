@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "compile:css": "sass -w -s compressed stylesheets/sass/index.sass:stylesheets/index.css"
+    "compile:css": "sass -w -s compressed stylesheets/sass/index.scss:stylesheets/index.css"
   },
   "repository": {
     "type": "git",

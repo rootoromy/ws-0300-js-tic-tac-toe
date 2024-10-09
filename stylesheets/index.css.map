@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["sass/index.sass","sass/variable.sass"],"names":[],"mappings":"AAEA,KACE,WCHiB","file":"index.css"}
+{"version":3,"sourceRoot":"","sources":["sass/variable.scss","sass/index.scss"],"names":[],"mappings":"AAGE,gBACE,uBACA,UAEF,QACE,eACA,WCNJ,KACE,WDJiB","file":"index.css"}
