@@ -6,31 +6,35 @@
   <link href="stylesheets/index.css" rel="stylesheet" type="text/css" media="all" />
 </head>
 <body>
-  <div class="container">
+  <section class="container">
     <!-- write your html -->
      <h1>TIC TAC TOE</h1>
      <div class="tab">
-      <div class="tab_panel">◯</div>
-      <div class="tab_panel">×</div>
+      <div class="tab__panel active">◯</div>
+      <div class="tab__panel">×</div>
      </div>
-     <table>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
+     <table class="table">
+        <tbody class="table__tbody">
+          <tr class="table__tr">
+            <td class="table__td"></td>
+            <td class="table__td"></td>
+            <td class="table__td"></td>
+          </tr>
+          <tr class="table__tr">
+            <td class="table__td"></td>
+            <td class="table__td"></td>
+            <td class="table__td"></td>
+          </tr>
+          <tr class="table__tr">
+            <td class="table__td"></td>
+            <td class="table__td"></td>
+            <td class="table__td"></td>
+          </tr>
+      </tbody>
      </table>
-  </div>
+     <div class="message">starting...</div>
+     <button class="button">RESTART</button>
+  </section>
   <script type="text/javascript" src="js/function.js"></script>
 </body>
 </html>
