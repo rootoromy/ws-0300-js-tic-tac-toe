@@ -12,6 +12,8 @@ let clickedCount = 0;
 
 //勝ち判定の関数
 function winJudgement(){
+  const table__td = document.getElementsByClassName('table__td');
+console.log(table__td);
   for(let j = 0; j<winPattern.length; j++){
 
     if(winPattern[j][0].innerHTML==="◯"&&winPattern[j][1].innerHTML==="◯"&&winPattern[j][2].innerHTML==="◯"){
@@ -24,6 +26,8 @@ function winJudgement(){
       for(let k = 0; k<3; k++){
         winPattern[j][k].classList.add('winCross');
       }
+    }else if(((table__td.innerHTML==="x")>=5)||((table__td.innerHTML==="◯")>=5)){
+      document.getElementById('message').textContent = "引き分けです！！！";
     }
   }
 }
@@ -43,6 +47,7 @@ for(let i = 0; i < tableElements.length; i++){
         alert("1回入力したら変更できません");
         return;
       }
+
         clickedCount++;
 
 
@@ -66,6 +71,7 @@ for(let i = 0; i < tableElements.length; i++){
 
       //勝ち判定の関数を実行
       winJudgement();
+
     });
   }
   //クリックしたらリセットする関数
