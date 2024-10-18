@@ -40,6 +40,13 @@ body {
         height: 50px;
         width: calc(100%/3);
         text-align: center;
+
+        &.winCircle {
+          background-color: yellow;
+        }
+        &.winCross {
+          background-color: skyblue;
+        }
       }
     }
     .message {
