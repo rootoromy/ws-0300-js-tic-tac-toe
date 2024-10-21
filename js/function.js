@@ -10,6 +10,8 @@ const winPattern = [
 
 const table__td = document.getElementsByClassName("table__td");
 const tableTdArray = Array.prototype.slice.call(table__td);//配列に変換
+const circle = document.getElementById("circle");
+const cross = document.getElementById("cross");
 
 let clickedCount = 0;
 let circleCount = 0;
@@ -41,6 +43,7 @@ function winJudgement(){
       return '×';
     } 
   }
+  
   //引き分け判定
   if((!isGameOver&&circleCount>=5) || (!isGameOver&&crossCount>=5)){
     document.getElementById('message').textContent = "引き分けです！！！";
@@ -52,12 +55,6 @@ function winJudgement(){
 for(let i = 0; i < tableElements.length; i++){
   //クリックしたら交互に◯×を出すようにする関数
   function handleClick() {
-    
-    //◯×のターンは、◯が先行
-    //const circle = document.getElementById("circle");
-    //circle.classList.add('active');
-    //const cross = document.getElementById("cross");
-    //cross.classList.remove('active');
 
     tableElements[i].addEventListener("click", (e)=>{
       //ゲームの決着がついている時はリターン
@@ -78,18 +75,14 @@ for(let i = 0; i < tableElements.length; i++){
           tableElements[i].innerHTML = "◯";
           circleCount++;
           //◯×のターンを切り替える
-          const cross = document.getElementById("cross");
           cross.classList.add('active');
-          const circle = document.getElementById("circle");
           circle.classList.remove('active');
         } else {
           //×を入れる
           tableElements[i].innerHTML = "×";
           crossCount++;
           //◯×のターンを切り替える
-          const circle = document.getElementById("circle");
           circle.classList.add('active');
-          const cross = document.getElementById("cross");
           cross.classList.remove('active');
         }
 
@@ -98,23 +91,23 @@ for(let i = 0; i < tableElements.length; i++){
 
     });
   }
-  //クリックしたらリセットする関数
-  function reset(){
-    button.addEventListener("click", ()=>{
-      isGameOver = false;
-      clickedCount = 0;
-      circleCount = 0;
-      crossCount = 0;
-      tableElements[i].innerHTML = "";
-      tableElements[i].classList.add('reset');
-      document.getElementById("message").textContent = "starting...";
-    });
-  }
+
   //上記関数を実行する
   handleClick();
-  reset();
 }
 
+//RESTARTボタンをクリック
+button.addEventListener("click", ()=>{
+  isGameOver = false;
+  clickedCount = 0;
+  circleCount = 0;
+  crossCount = 0;
+  document.getElementById("message").textContent = "starting...";
+  tableElements.forEach((value)=>{
+    value.innerHTML = "";
+    value.classList.add("reset");
+  });
+});
 
 
 
